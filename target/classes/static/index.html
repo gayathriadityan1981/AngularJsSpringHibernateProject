@@ -1,0 +1,47 @@
+<!Doctype html>
+<html>
+    <head>
+    <script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+    <script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.9/angular-route.js"></script>
+    <h2>Student</h2>
+    <style>
+    table,th,td{
+        border: 1px solid green;
+        padding : 5px;
+    };
+    </style>
+    </head>
+    <body >
+        <div ng-app="myapp" ng-controller="myctrller">
+
+    <table   >
+    <tr ng-repeat="obj in student">
+    <td>{{$index+1}}</td>
+    <td>{{obj.Name}}</td>
+    <td>{{obj.Degree}}</td>
+    </tr>
+    </table>
+    </div>
+
+    <script>
+    var app=angular.module("myapp",[]);
+    app.controller("myctrller",function($scope){
+        $scope.student=[
+        {
+            Name:"Gayathri",
+            Degree:"BE.,MBA",
+            University:"Bharatiyaar University"
+        },
+        {
+            Name:"Adityan",
+            Degree:"BVSc.,",
+            University:"Vet University"
+        }
+      
+        ]
+
+    });
+    </script>
+    </body>
+</html>    
