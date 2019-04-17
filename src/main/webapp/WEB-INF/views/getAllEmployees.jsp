@@ -78,11 +78,11 @@
 
 //var app=angular.module("myApp",'[ngResource]');
 var app=angular.module("myApp",'[]');
-console.log("------------0----------");
+
 app.controller('employeeController', [
     '$scope', 'empService',
     function employeeController($scope, empService) {
-    	console.log("------------1----------");
+    	
         var vm = this;
         vm.employees = [];
 
@@ -90,7 +90,7 @@ app.controller('employeeController', [
             empService.getEmployees("/getAllEmployees")
                 .then(function(employees) {
                     vm.employees = employees;
-                 	console.log("------------1----------"+employees);
+                 	
                     console.log('employees returned to controller.');
                 },
                 function(data) {
@@ -102,18 +102,7 @@ app.controller('employeeController', [
     }
 ]);
 
-/*
-app.controller('myCtrl',function($scope,$http){    
-	 $scope.insertData=function(){      
-	 $http.post("insert.php", {
-	    'bname':$scope.bname,
-	    'bphone':$scope.bphone})        
 
-	 .success(function(data,status,headers,config){
-	 console.log("Data Inserted Successfully");
-	 });
-	    }
-	     });*/
 
 
 	</script>
